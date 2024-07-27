@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'angular-web-componentc' title`, () => {
+  it(`should have the 'angular-web-component' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-web-componentc');
+    expect(app.title).toEqual('angular-web-component');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angular-web-componentc');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angular-web-component');
   });
 });
