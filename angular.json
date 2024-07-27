@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-web-componentc": {
+    "angular-web-component": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,11 +13,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-web-componentc",
+            "outputPath": "dist/angular-web-component",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "src/polyfills.ts"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -57,10 +57,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-web-componentc:build:production"
+              "buildTarget": "angular-web-component:build:production"
             },
             "development": {
-              "buildTarget": "angular-web-componentc:build:development"
+              "buildTarget": "angular-web-component:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,16 +68,13 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "angular-web-componentc:build"
+            "buildTarget": "angular-web-component:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/favicon.ico",
